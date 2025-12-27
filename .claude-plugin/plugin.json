@@ -1,0 +1,15 @@
+{
+  "name": "happy-claude-skills",
+  "version": "1.0.0",
+  "description": "A collection of practical Claude Code skill plugins, including document format replication and video processing",
+  "author": {
+    "name": "iamzhihuix",
+    "url": "https://github.com/iamzhihuix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamzhihuix/happy-claude-skills.git"
+  },
+  "license": "MIT",
+  "keywords": ["docx", "word", "document", "format", "template", "skills", "video", "youtube", "transcription", "whisper"]
+}
