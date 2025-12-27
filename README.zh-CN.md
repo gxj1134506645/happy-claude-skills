@@ -28,9 +28,14 @@
 
 ### 从 GitHub 安装
 
-在 Claude Code 中执行：
+首先，在 Claude Code 中添加此仓库为插件市场：
 ```
-/plugin install iamzhihuix/happy-claude-skills
+/plugin marketplace add iamzhihuix/happy-claude-skills
+```
+
+然后安装 skills：
+```
+/plugin install happy-skills@happy-claude-skills
 ```
 
 ### 本地开发安装
@@ -77,7 +82,7 @@ brew install ffmpeg  # macOS
 ```
 happy-claude-skills/
 ├── .claude-plugin/
-│   └── plugin.json              # 插件配置
+│   └── marketplace.json         # 市场配置
 ├── skills/
 │   ├── docx-format-replicator/
 │   │   ├── SKILL.md             # Skill 定义

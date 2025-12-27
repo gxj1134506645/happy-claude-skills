@@ -1,0 +1,23 @@
+{
+  "name": "happy-claude-skills",
+  "owner": {
+    "name": "iamzhihuix",
+    "url": "https://github.com/iamzhihuix"
+  },
+  "metadata": {
+    "description": "Practical Claude Code skill plugins for document format replication and video processing",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "happy-skills",
+      "description": "Document format replication and video processing skills",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/docx-format-replicator",
+        "./skills/video-processor"
+      ]
+    }
+  ]
+}

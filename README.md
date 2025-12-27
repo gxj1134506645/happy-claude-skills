@@ -28,9 +28,14 @@ Download and process videos from YouTube and other platforms. Supports video dow
 
 ### Install from GitHub
 
-Run in Claude Code:
+First, add this repository as a plugin marketplace in Claude Code:
 ```
-/plugin install iamzhihuix/happy-claude-skills
+/plugin marketplace add iamzhihuix/happy-claude-skills
+```
+
+Then install the skills:
+```
+/plugin install happy-skills@happy-claude-skills
 ```
 
 ### Local Development Installation
@@ -77,7 +82,7 @@ brew install ffmpeg  # macOS
 ```
 happy-claude-skills/
 ├── .claude-plugin/
-│   └── plugin.json              # Plugin configuration
+│   └── marketplace.json         # Marketplace configuration
 ├── skills/
 │   ├── docx-format-replicator/
 │   │   ├── SKILL.md             # Skill definition
