@@ -33,9 +33,10 @@ First, add this repository as a plugin marketplace in Claude Code:
 /plugin marketplace add iamzhihuix/happy-claude-skills
 ```
 
-Then install the skills:
+Then install the skills you need:
 ```
-/plugin install happy-skills@happy-claude-skills
+/plugin install docx-format-replicator@happy-claude-skills
+/plugin install video-processor@happy-claude-skills
 ```
 
 ### Local Development Installation

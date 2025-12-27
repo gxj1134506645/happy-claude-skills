@@ -33,9 +33,10 @@
 /plugin marketplace add iamzhihuix/happy-claude-skills
 ```
 
-然后安装 skills：
+然后安装你需要的 skills：
 ```
-/plugin install happy-skills@happy-claude-skills
+/plugin install docx-format-replicator@happy-claude-skills
+/plugin install video-processor@happy-claude-skills
 ```
 
 ### 本地开发安装

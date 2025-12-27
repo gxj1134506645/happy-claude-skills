@@ -10,12 +10,20 @@
   },
   "plugins": [
     {
-      "name": "happy-skills",
-      "description": "Document format replication and video processing skills",
+      "name": "docx-format-replicator",
+      "description": "Extract formatting from Word documents and generate new documents with the same format",
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/docx-format-replicator",
+        "./skills/docx-format-replicator"
+      ]
+    },
+    {
+      "name": "video-processor",
+      "description": "Download and process videos from YouTube with audio extraction, format conversion, and Whisper transcription",
+      "source": "./",
+      "strict": false,
+      "skills": [
         "./skills/video-processor"
       ]
     }
