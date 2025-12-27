@@ -24,6 +24,15 @@ Download and process videos from YouTube and other platforms. Supports video dow
 - Convert videos to MP4/WebM formats
 - Transcribe audio/video to text using Whisper
 
+### wechat-article-writer
+Automated WeChat article writing workflow with 4 steps: research, writing, title generation, and formatting optimization.
+
+**Use Cases:**
+- Write WeChat official account articles
+- Generate viral headlines
+- Content creation for self-media
+- Article formatting and optimization
+
 ## Installation
 
 ### Install from GitHub
@@ -37,6 +46,7 @@ Then install the skills you need:
 ```
 /plugin install docx-format-replicator@happy-claude-skills
 /plugin install video-processor@happy-claude-skills
+/plugin install wechat-article-writer@happy-claude-skills
 ```
 
 ### Local Development Installation
@@ -54,6 +64,8 @@ After installation, simply describe your needs in Claude Code:
 > "I have a document template and need to generate 5 new documents with the same format"
 
 > "Download this YouTube video and transcribe it to text"
+
+> "Help me write a WeChat article about AI programming tips"
 
 Claude will automatically identify and invoke the appropriate skill.
 
@@ -90,9 +102,11 @@ happy-claude-skills/
 │   │   ├── scripts/             # Python scripts
 │   │   ├── assets/              # Example files
 │   │   └── references/          # Reference docs
-│   └── video-processor/
-│       ├── SKILL.md             # Skill definition
-│       └── scripts/             # Python scripts
+│   ├── video-processor/
+│   │   ├── SKILL.md             # Skill definition
+│   │   └── scripts/             # Python scripts
+│   └── wechat-article-writer/
+│       └── SKILL.md             # Skill definition
 ├── README.md
 └── LICENSE
 ```

@@ -24,6 +24,15 @@
 - 将视频转换为 MP4/WebM 格式
 - 使用 Whisper 将音频/视频转录为文字
 
+### wechat-article-writer
+公众号文章自动化写作流程，4 步完成高质量文章：搜索资料、撰写文章、生成标题、排版优化。
+
+**适用场景：**
+- 撰写微信公众号文章
+- 生成爆款标题
+- 自媒体内容创作
+- 文章排版优化
+
 ## 安装方法
 
 ### 从 GitHub 安装
@@ -37,6 +46,7 @@
 ```
 /plugin install docx-format-replicator@happy-claude-skills
 /plugin install video-processor@happy-claude-skills
+/plugin install wechat-article-writer@happy-claude-skills
 ```
 
 ### 本地开发安装
@@ -54,6 +64,8 @@ claude --plugin-dir /path/to/happy-claude-skills
 > "我有一个研制任务书模板，需要用相同格式生成5份新文档"
 
 > "下载这个 YouTube 视频并转录成文字"
+
+> "帮我写一篇关于 AI 编程技巧的公众号文章"
 
 Claude 会自动识别并调用相应的 skill。
 
@@ -90,9 +102,11 @@ happy-claude-skills/
 │   │   ├── scripts/             # Python 脚本
 │   │   ├── assets/              # 示例文件
 │   │   └── references/          # 参考文档
-│   └── video-processor/
-│       ├── SKILL.md             # Skill 定义
-│       └── scripts/             # Python 脚本
+│   ├── video-processor/
+│   │   ├── SKILL.md             # Skill 定义
+│   │   └── scripts/             # Python 脚本
+│   └── wechat-article-writer/
+│       └── SKILL.md             # Skill 定义
 ├── README.md
 └── LICENSE
 ```
