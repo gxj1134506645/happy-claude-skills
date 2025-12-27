@@ -33,3 +33,6 @@ ENV/
 # Output files
 *.docx
 !skills/*/assets/*.docx
+
+# Test and reference materials
+box/
