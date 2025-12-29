@@ -33,6 +33,15 @@ Automated WeChat article writing workflow with 4 steps: research, writing, title
 - Content creation for self-media
 - Article formatting and optimization
 
+### browser
+Browser automation using Chrome DevTools Protocol. Start Chrome, navigate pages, execute JavaScript, take screenshots, and interactively pick DOM elements.
+
+**Use Cases:**
+- Web scraping with authenticated sessions
+- Visual regression testing
+- DOM inspection and data extraction
+- Screenshot capture for documentation
+
 ## Installation
 
 ### Install from GitHub
@@ -47,6 +56,7 @@ Then install the skills you need:
 /plugin install docx-format-replicator@happy-claude-skills
 /plugin install video-processor@happy-claude-skills
 /plugin install wechat-article-writer@happy-claude-skills
+/plugin install browser@happy-claude-skills
 ```
 
 ### Local Development Installation
@@ -66,6 +76,8 @@ After installation, simply describe your needs in Claude Code:
 > "Download this YouTube video and transcribe it to text"
 
 > "Help me write a WeChat article about AI programming tips"
+
+> "Scrape the product information from this webpage"
 
 Claude will automatically identify and invoke the appropriate skill.
 
@@ -90,6 +102,15 @@ pip install yt-dlp openai-whisper
 brew install ffmpeg  # macOS
 ```
 
+### browser
+- Node.js 18+
+- puppeteer-core
+- Google Chrome
+
+```bash
+npm install --prefix skills/browser
+```
+
 ## Project Structure
 
 ```
@@ -105,8 +126,12 @@ happy-claude-skills/
 │   ├── video-processor/
 │   │   ├── SKILL.md             # Skill definition
 │   │   └── scripts/             # Python scripts
-│   └── wechat-article-writer/
-│       └── SKILL.md             # Skill definition
+│   ├── wechat-article-writer/
+│   │   └── SKILL.md             # Skill definition
+│   └── browser/
+│       ├── SKILL.md             # Skill definition
+│       ├── package.json         # Node.js dependencies
+│       └── scripts/             # Node.js scripts
 ├── README.md
 └── LICENSE
 ```
@@ -114,6 +139,7 @@ happy-claude-skills/
 ## Acknowledgments
 
 - **video-processor** skill is adapted from [claude-code-hooks-multi-agent-observability](https://github.com/disler/claude-code-hooks-multi-agent-observability) by [@disler](https://github.com/disler)
+- **browser** skill is based on [Mario Zechner](https://mariozechner.at)'s article [What if you don't need MCP?](https://mariozechner.at/posts/2025-11-02-what-if-you-dont-need-mcp/) ([GitHub](https://github.com/badlogic/browser-tools)), adapted from [Factory.ai](https://docs.factory.ai/guides/skills/browser)
 
 ## Contributing
 

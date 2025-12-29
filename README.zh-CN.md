@@ -33,6 +33,15 @@
 - 自媒体内容创作
 - 文章排版优化
 
+### browser
+基于 Chrome DevTools Protocol 的浏览器自动化工具。启动 Chrome、导航页面、执行 JavaScript、截图、可视化选择 DOM 元素。
+
+**适用场景：**
+- 带登录状态的网页爬虫
+- 视觉回归测试
+- DOM 检查和数据提取
+- 截图用于文档
+
 ## 安装方法
 
 ### 从 GitHub 安装
@@ -47,6 +56,7 @@
 /plugin install docx-format-replicator@happy-claude-skills
 /plugin install video-processor@happy-claude-skills
 /plugin install wechat-article-writer@happy-claude-skills
+/plugin install browser@happy-claude-skills
 ```
 
 ### 本地开发安装
@@ -66,6 +76,8 @@ claude --plugin-dir /path/to/happy-claude-skills
 > "下载这个 YouTube 视频并转录成文字"
 
 > "帮我写一篇关于 AI 编程技巧的公众号文章"
+
+> "抓取这个网页的产品信息"
 
 Claude 会自动识别并调用相应的 skill。
 
@@ -90,6 +102,15 @@ pip install yt-dlp openai-whisper
 brew install ffmpeg  # macOS
 ```
 
+### browser
+- Node.js 18+
+- puppeteer-core
+- Google Chrome
+
+```bash
+npm install --prefix skills/browser
+```
+
 ## 项目结构
 
 ```
@@ -105,8 +126,12 @@ happy-claude-skills/
 │   ├── video-processor/
 │   │   ├── SKILL.md             # Skill 定义
 │   │   └── scripts/             # Python 脚本
-│   └── wechat-article-writer/
-│       └── SKILL.md             # Skill 定义
+│   ├── wechat-article-writer/
+│   │   └── SKILL.md             # Skill 定义
+│   └── browser/
+│       ├── SKILL.md             # Skill 定义
+│       ├── package.json         # Node.js 依赖
+│       └── scripts/             # Node.js 脚本
 ├── README.md
 └── LICENSE
 ```
@@ -114,6 +139,7 @@ happy-claude-skills/
 ## 鸣谢
 
 - **video-processor** skill 改编自 [@disler](https://github.com/disler) 的 [claude-code-hooks-multi-agent-observability](https://github.com/disler/claude-code-hooks-multi-agent-observability) 项目
+- **browser** skill 基于 [Mario Zechner](https://mariozechner.at) 的文章 [What if you don't need MCP?](https://mariozechner.at/posts/2025-11-02-what-if-you-dont-need-mcp/) ([GitHub](https://github.com/badlogic/browser-tools))，整理自 [Factory.ai](https://docs.factory.ai/guides/skills/browser)
 
 ## 贡献
 

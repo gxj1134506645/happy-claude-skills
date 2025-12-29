@@ -35,6 +35,15 @@
       "skills": [
         "./skills/wechat-article-writer"
       ]
+    },
+    {
+      "name": "browser",
+      "description": "Browser automation with Chrome DevTools Protocol for scraping, testing, and visual verification",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/browser"
+      ]
     }
   ]
 }
