@@ -57,6 +57,23 @@ AI驱动的图书/电影海报生成器，基于Midjourney V5.0稳定版Prompt�
 - 中文字体优化（思源宋体，确保清晰度）
 - 支持竖版(2:3)和横版(16:9)两种比例
 
+### report-generator
+基于git提交记录的自动化周报生成器，创建结构化的工作总结用于团队汇报。
+
+**适用场景：**
+- 生成周工作汇报
+- 团队进度同步
+- 项目里程碑总结
+- 企业OA系统汇报（企业微信、钉钉）
+
+**核心功能：**
+- 自动提取本周git提交记录
+- 智能汇总为10条关键内容
+- 每条20-30字，精简准确
+- 阿拉伯数字有序排序（1、2、3...）
+- 过滤无意义提交（merge、wip、tmp）
+- 去重并按模块分类
+
 ## 安装方法
 
 ### 从 GitHub 安装
@@ -68,11 +85,12 @@ AI驱动的图书/电影海报生成器，基于Midjourney V5.0稳定版Prompt�
 
 然后安装你需要的 skills：
 ```
-/plugin install docx-format-replicator@happy-claude-skills
-/plugin install video-processor@happy-claude-skills
-/plugin install wechat-article-writer@happy-claude-skills
-/plugin install browser@happy-claude-skills
-/plugin install book-cover-generator@happy-claude-skills
+/plugin install docx-format-replicator@happy-claude-skills-gxj
+/plugin install video-processor@happy-claude-skills-gxj
+/plugin install wechat-article-writer@happy-claude-skills-gxj
+/plugin install browser@happy-claude-skills-gxj
+/plugin install book-cover-generator@happy-claude-skills-gxj
+/plugin install report-generator@happy-claude-skills-gxj
 ```
 
 ### 本地开发安装
@@ -96,6 +114,8 @@ claude --plugin-dir /path/to/happy-claude-skills
 > "抓取这个网页的产品信息"
 
 > "生成《三体》的图书封面海报"
+
+> "生成周报"
 
 Claude 会自动识别并调用相应的 skill。
 
@@ -146,11 +166,13 @@ happy-claude-skills/
 │   │   └── scripts/             # Python 脚本
 │   ├── wechat-article-writer/
 │   │   └── SKILL.md             # Skill 定义
-│   └── browser/
-│       ├── SKILL.md             # Skill 定义
-│       ├── package.json         # Node.js 依赖
-│       └── scripts/             # Node.js 脚本
-│   └── book-cover-generator/
+│   ├── browser/
+│   │   ├── SKILL.md             # Skill 定义
+│   │   ├── package.json         # Node.js 依赖
+│   │   └── scripts/             # Node.js 脚本
+│   ├── book-cover-generator/
+│   │   └── SKILL.md             # Skill 定义
+│   └── report-generator/
 │       └── SKILL.md             # Skill 定义
 ├── README.md
 └── LICENSE

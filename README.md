@@ -57,6 +57,23 @@ AI-powered book and movie poster generator using Midjourney V5.0 with 5000+ visu
 - Chinese font optimization (Source Han Serif for clarity)
 - Support for both portrait (2:3) and landscape (16:9) ratios
 
+### report-generator
+Automated weekly report generator based on git commit history. Creates structured work summaries for team communication.
+
+**Use Cases:**
+- Generate weekly work reports
+- Team progress updates
+- Project milestone summaries
+- Enterprise OA system reporting (WeChat Work, DingTalk)
+
+**Core Features:**
+- Automatic extraction of this week's git commits
+- Intelligently summarizes commits into 10 key items
+- Each item is 20-30 characters
+- Ordered list format (1, 2, 3...)
+- Filters meaningless commits (merge, wip, tmp)
+- Deduplicates and categorizes by module
+
 ## Installation
 
 ### Install from GitHub
@@ -73,6 +90,7 @@ Then install the skills you need:
 /plugin install wechat-article-writer@happy-claude-skills-gxj
 /plugin install browser@happy-claude-skills-gxj
 /plugin install book-cover-generator@happy-claude-skills-gxj
+/plugin install report-generator@happy-claude-skills-gxj
 ```
 
 ### Local Development Installation
@@ -96,6 +114,8 @@ After installation, simply describe your needs in Claude Code:
 > "Scrape the product information from this webpage"
 
 > "Generate a book cover poster for 'The Three-Body Problem'"
+
+> "Generate a weekly report"
 
 Claude will automatically identify and invoke the appropriate skill.
 
@@ -146,11 +166,13 @@ happy-claude-skills/
 │   │   └── scripts/             # Python scripts
 │   ├── wechat-article-writer/
 │   │   └── SKILL.md             # Skill definition
-│   └── browser/
-│       ├── SKILL.md             # Skill definition
-│       ├── package.json         # Node.js dependencies
-│       └── scripts/             # Node.js scripts
-│   └── book-cover-generator/
+│   ├── browser/
+│   │   ├── SKILL.md             # Skill definition
+│   │   ├── package.json         # Node.js dependencies
+│   │   └── scripts/             # Node.js scripts
+│   ├── book-cover-generator/
+│   │   └── SKILL.md             # Skill definition
+│   └── report-generator/
 │       └── SKILL.md             # Skill definition
 ├── README.md
 └── LICENSE

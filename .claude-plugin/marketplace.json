@@ -53,6 +53,15 @@
       "skills": [
         "./skills/book-cover-generator"
       ]
+    },
+    {
+      "name": "report-generator",
+      "description": "Automated weekly report generator based on git commit history",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/report-generator"
+      ]
     }
   ]
 }
