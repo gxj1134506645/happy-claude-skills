@@ -42,28 +42,44 @@ Browser automation using Chrome DevTools Protocol. Start Chrome, navigate pages,
 - DOM inspection and data extraction
 - Screenshot capture for documentation
 
+### book-cover-generator
+AI-powered book and movie poster generator using Midjourney V5.0 with 5000+ visual style combinations.
+
+**Use Cases:**
+- Generate book cover posters
+- Create movie promotional posters
+- Visual showcase for literary works
+- Book recommendation posters for knowledge bloggers
+
+**Core Features:**
+- Automatic extraction of work information (themes, quotes, insights, characters, timeline)
+- Intelligent visual style adaptation (color schemes, patterns, calligraphy styles)
+- Chinese font optimization (Source Han Serif for clarity)
+- Support for both portrait (2:3) and landscape (16:9) ratios
+
 ## Installation
 
 ### Install from GitHub
 
 First, add this repository as a plugin marketplace in Claude Code:
 ```
-/plugin marketplace add iamzhihuix/happy-claude-skills
+/plugin marketplace add gxj1134506645/happy-claude-skills
 ```
 
 Then install the skills you need:
 ```
-/plugin install docx-format-replicator@happy-claude-skills
-/plugin install video-processor@happy-claude-skills
-/plugin install wechat-article-writer@happy-claude-skills
-/plugin install browser@happy-claude-skills
+/plugin install docx-format-replicator@happy-claude-skills-gxj
+/plugin install video-processor@happy-claude-skills-gxj
+/plugin install wechat-article-writer@happy-claude-skills-gxj
+/plugin install browser@happy-claude-skills-gxj
+/plugin install book-cover-generator@happy-claude-skills-gxj
 ```
 
 ### Local Development Installation
 
 After cloning the repository, use the `--plugin-dir` parameter:
 ```bash
-git clone https://github.com/iamzhihuix/happy-claude-skills.git
+git clone https://github.com/gxj1134506645/happy-claude-skills.git
 claude --plugin-dir /path/to/happy-claude-skills
 ```
 
@@ -78,6 +94,8 @@ After installation, simply describe your needs in Claude Code:
 > "Help me write a WeChat article about AI programming tips"
 
 > "Scrape the product information from this webpage"
+
+> "Generate a book cover poster for 'The Three-Body Problem'"
 
 Claude will automatically identify and invoke the appropriate skill.
 
@@ -132,6 +150,8 @@ happy-claude-skills/
 │       ├── SKILL.md             # Skill definition
 │       ├── package.json         # Node.js dependencies
 │       └── scripts/             # Node.js scripts
+│   └── book-cover-generator/
+│       └── SKILL.md             # Skill definition
 ├── README.md
 └── LICENSE
 ```
