@@ -42,13 +42,28 @@
 - DOM 检查和数据提取
 - 截图用于文档
 
+### book-cover-generator
+AI驱动的图书/电影海报生成器，基于Midjourney V5.0稳定版Prompt，支持5000+种视觉风格组合。
+
+**适用场景：**
+- 生成书籍封面海报
+- 制作电影宣传海报
+- 文学作品可视化展示
+- 知识博主书单推荐
+
+**核心功能：**
+- 自动提取作品信息（主题、语录、观点、人物、时间线）
+- 智能适配视觉风格（配色、纹样、书法）
+- 中文字体优化（思源宋体，确保清晰度）
+- 支持竖版(2:3)和横版(16:9)两种比例
+
 ## 安装方法
 
 ### 从 GitHub 安装
 
 首先，在 Claude Code 中添加此仓库为插件市场：
 ```
-/plugin marketplace add iamzhihuix/happy-claude-skills
+/plugin marketplace add gxj1134506645/happy-claude-skills
 ```
 
 然后安装你需要的 skills：
@@ -57,13 +72,14 @@
 /plugin install video-processor@happy-claude-skills
 /plugin install wechat-article-writer@happy-claude-skills
 /plugin install browser@happy-claude-skills
+/plugin install book-cover-generator@happy-claude-skills
 ```
 
 ### 本地开发安装
 
 克隆仓库后，使用 `--plugin-dir` 参数：
 ```bash
-git clone https://github.com/iamzhihuix/happy-claude-skills.git
+git clone https://github.com/gxj1134506645/happy-claude-skills.git
 claude --plugin-dir /path/to/happy-claude-skills
 ```
 
@@ -78,6 +94,8 @@ claude --plugin-dir /path/to/happy-claude-skills
 > "帮我写一篇关于 AI 编程技巧的公众号文章"
 
 > "抓取这个网页的产品信息"
+
+> "生成《三体》的图书封面海报"
 
 Claude 会自动识别并调用相应的 skill。
 
@@ -132,6 +150,8 @@ happy-claude-skills/
 │       ├── SKILL.md             # Skill 定义
 │       ├── package.json         # Node.js 依赖
 │       └── scripts/             # Node.js 脚本
+│   └── book-cover-generator/
+│       └── SKILL.md             # Skill 定义
 ├── README.md
 └── LICENSE
 ```
