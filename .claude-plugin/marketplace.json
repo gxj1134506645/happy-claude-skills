@@ -44,6 +44,15 @@
       "skills": [
         "./skills/browser"
       ]
+    },
+    {
+      "name": "book-cover-generator",
+      "description": "AI-powered book and movie poster generator using Midjourney V5.0 with 5000+ style combinations",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/book-cover-generator"
+      ]
     }
   ]
 }
