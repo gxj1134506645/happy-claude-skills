@@ -75,30 +75,32 @@ AI驱动的图书/电影海报生成器，基于Midjourney V5.0稳定版Prompt�
 - 去重并按模块分类
 
 ### markdown-helper
-Markdown文档编写辅助工具，支持图表生成、格式检查和目录创建。
+Markdown文档编写辅助工具，支持PlantUML/Mermaid图表生成、格式检查和目录创建。
 
 **适用场景：**
-- 生成Mermaid/UML图表（流程图、时序图、结构图、泳道图）
-- 自动将Mermaid代码转换为PNG图片
+- 生成UML图表（用例图、时序图、类图、活动图、泳道图）
+- 生成流程图、思维导图、甘特图
+- 自动将PlantUML代码转换为PNG图片
 - 检查并修复Markdown格式问题
 - 自动生成目录
 
 **支持的图表类型：**
-- 流程图（业务流程、审批流程）
-- 时序图（系统交互、API调用）
-- 类图（数据模型、类结构）
-- 状态图（状态流转）
-- 实体关系图（数据库设计）
-- 思维导图（知识体系、功能结构）
-- 甘特图（项目计划）
-- 泳道图（跨部门流程）
+- **PlantUML（默认）**：用例图、时序图、类图、活动图、状态图、组件图、部署图、泳道图
+- **Mermaid（可选）**：流程图、时序图、思维导图、甘特图、ER图、状态图
 
 **核心功能：**
-- 使用Ant Design配色方案生成Mermaid代码
-- 自动转换为PNG透明背景图片
+- PlantUML代码生成，符合标准UML语法
+- Mermaid代码生成，适合快速绘图
+- 自动转换为PNG图片（通过在线服务，无需CLI工具）
 - 格式验证（标题缩进、空行、编号）
 - 生成带锚点链接的目录
 - 图片路径管理和命名规范
+- 工具选择指南（PlantUML vs Mermaid）
+
+**工具选择：**
+- 使用 **PlantUML**：标准UML图、正式文档、企业级文档
+- 使用 **Mermaid**：GitHub/GitLab文档、快速流程图、思维导图
+- 两种工具可以在同一项目中混用
 
 ## 安装方法
 
@@ -183,11 +185,18 @@ npm install --prefix skills/browser
 ```
 
 ### markdown-helper
-- Node.js 18+
-- @mermaid-js/mermaid-cli
-- Puppeteer Chrome
+- Node.js 14+
+- 无需额外依赖（使用内置模块）
 
+**PlantUML（默认）：**
 ```bash
+# 无需安装 - 使用在线服务
+# 脚本：scripts/plantuml-to-png.js
+```
+
+**Mermaid（可选）：**
+```bash
+# 仅在需要将Mermaid转换为PNG时安装
 npm install -g @mermaid-js/mermaid-cli@10.9.0
 npm install puppeteer@19.11.1
 npx puppeteer browsers install chrome

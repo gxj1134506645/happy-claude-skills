@@ -65,7 +65,7 @@
     },
     {
       "name": "markdown-helper",
-      "description": "Markdown document writing assistant for generating diagrams, checking format, and creating table of contents",
+      "description": "Markdown document writing assistant with PlantUML/Mermaid diagram generation, format checking, and table of contents creation",
       "source": "./",
       "strict": false,
       "skills": [

@@ -75,30 +75,32 @@ Automated weekly report generator based on git commit history. Creates structure
 - Deduplicates and categorizes by module
 
 ### markdown-helper
-Markdown document writing assistant with chart generation, format checking, and table of contents creation.
+Markdown document writing assistant with PlantUML/Mermaid diagram generation, format checking, and table of contents creation.
 
 **Use Cases:**
-- Generate Mermaid/UML diagrams (flowcharts, sequence diagrams, structure diagrams, swimlane diagrams)
-- Auto-convert Mermaid code to PNG images
+- Generate UML diagrams (use case diagrams, sequence diagrams, class diagrams, activity diagrams, swimlane diagrams)
+- Generate flowcharts, mindmaps, and Gantt charts
+- Auto-convert PlantUML code to PNG images
 - Check and fix Markdown format issues
 - Generate table of contents automatically
 
 **Supported Chart Types:**
-- Flowchart (business processes, approval workflows)
-- Sequence diagram (system interactions, API calls)
-- Class diagram (data models, class structures)
-- State diagram (state transitions)
-- ER diagram (database design)
-- Mindmap (knowledge systems, functional structures)
-- Gantt chart (project planning)
-- Swimlane diagram (cross-department processes)
+- **PlantUML (default)**: Use case diagram, sequence diagram, class diagram, activity diagram, state diagram, component diagram, deployment diagram, swimlane diagram
+- **Mermaid (optional)**: Flowchart, sequence diagram, mindmap, Gantt chart, ER diagram, state diagram
 
 **Core Features:**
-- Mermaid code generation with Ant Design color scheme
-- Automatic PNG conversion with transparent background
+- PlantUML code generation with standard UML syntax
+- Mermaid code generation for quick diagrams
+- Automatic PNG conversion via online service (no CLI tools needed)
 - Format validation (header indentation, spacing, numbering)
 - Table of contents generation with anchor links
 - Image path management and naming conventions
+- Tool selection guide (PlantUML vs Mermaid)
+
+**Tool Selection:**
+- Use **PlantUML** for: Standard UML diagrams, formal documentation, enterprise documents
+- Use **Mermaid** for: GitHub/GitLab docs, quick flowcharts, mindmaps
+- Both tools can be used together in the same project
 
 ## Installation
 
@@ -183,11 +185,18 @@ npm install --prefix skills/browser
 ```
 
 ### markdown-helper
-- Node.js 18+
-- @mermaid-js/mermaid-cli
-- Puppeteer Chrome
+- Node.js 14+
+- No additional dependencies (uses built-in modules)
 
+**PlantUML (default):**
 ```bash
+# No installation needed - uses online service
+# Script: scripts/plantuml-to-png.js
+```
+
+**Mermaid (optional):**
+```bash
+# Only if you need to convert Mermaid to PNG
 npm install -g @mermaid-js/mermaid-cli@10.9.0
 npm install puppeteer@19.11.1
 npx puppeteer browsers install chrome
