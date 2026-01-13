@@ -62,6 +62,15 @@
       "skills": [
         "./skills/report-generator"
       ]
+    },
+    {
+      "name": "markdown-helper",
+      "description": "Markdown document writing assistant for generating diagrams, checking format, and creating table of contents",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/markdown-helper"
+      ]
     }
   ]
 }
