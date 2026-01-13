@@ -74,6 +74,32 @@ AI驱动的图书/电影海报生成器，基于Midjourney V5.0稳定版Prompt�
 - 过滤无意义提交（merge、wip、tmp）
 - 去重并按模块分类
 
+### markdown-helper
+Markdown文档编写辅助工具，支持图表生成、格式检查和目录创建。
+
+**适用场景：**
+- 生成Mermaid/UML图表（流程图、时序图、结构图、泳道图）
+- 自动将Mermaid代码转换为PNG图片
+- 检查并修复Markdown格式问题
+- 自动生成目录
+
+**支持的图表类型：**
+- 流程图（业务流程、审批流程）
+- 时序图（系统交互、API调用）
+- 类图（数据模型、类结构）
+- 状态图（状态流转）
+- 实体关系图（数据库设计）
+- 思维导图（知识体系、功能结构）
+- 甘特图（项目计划）
+- 泳道图（跨部门流程）
+
+**核心功能：**
+- 使用Ant Design配色方案生成Mermaid代码
+- 自动转换为PNG透明背景图片
+- 格式验证（标题缩进、空行、编号）
+- 生成带锚点链接的目录
+- 图片路径管理和命名规范
+
 ## 安装方法
 
 ### 从 GitHub 安装
@@ -91,6 +117,7 @@ AI驱动的图书/电影海报生成器，基于Midjourney V5.0稳定版Prompt�
 /plugin install browser@happy-claude-skills-gxj
 /plugin install book-cover-generator@happy-claude-skills-gxj
 /plugin install report-generator@happy-claude-skills-gxj
+/plugin install markdown-helper@happy-claude-skills-gxj
 ```
 
 ### 本地开发安装
@@ -116,6 +143,12 @@ claude --plugin-dir /path/to/happy-claude-skills
 > "生成《三体》的图书封面海报"
 
 > "生成周报"
+
+> "生成用户登录流程图"
+
+> "创建系统架构时序图"
+
+> "检查markdown格式并修复问题"
 
 Claude 会自动识别并调用相应的 skill。
 
@@ -149,6 +182,17 @@ brew install ffmpeg  # macOS
 npm install --prefix skills/browser
 ```
 
+### markdown-helper
+- Node.js 18+
+- @mermaid-js/mermaid-cli
+- Puppeteer Chrome
+
+```bash
+npm install -g @mermaid-js/mermaid-cli@10.9.0
+npm install puppeteer@19.11.1
+npx puppeteer browsers install chrome
+```
+
 ## 项目结构
 
 ```
@@ -172,13 +216,17 @@ happy-claude-skills/
 │   │   └── scripts/             # Node.js 脚本
 │   ├── book-cover-generator/
 │   │   └── SKILL.md             # Skill 定义
-│   └── report-generator/
+│   ├── report-generator/
+│   │   └── SKILL.md             # Skill 定义
+│   └── markdown-helper/
 │       └── SKILL.md             # Skill 定义
 ├── README.md
 └── LICENSE
 ```
 
 ## 鸣谢
+
+本仓库 fork 自 [iamzhihuix/happy-claude-skills](https://github.com/iamzhihuix/happy-claude-skills)，特别感谢原作者创建了这个精彩的 Claude Code skills 集合。
 
 - **video-processor** skill 改编自 [@disler](https://github.com/disler) 的 [claude-code-hooks-multi-agent-observability](https://github.com/disler/claude-code-hooks-multi-agent-observability) 项目
 - **browser** skill 基于 [Mario Zechner](https://mariozechner.at) 的文章 [What if you don't need MCP?](https://mariozechner.at/posts/2025-11-02-what-if-you-dont-need-mcp/) ([GitHub](https://github.com/badlogic/browser-tools))，整理自 [Factory.ai](https://docs.factory.ai/guides/skills/browser)

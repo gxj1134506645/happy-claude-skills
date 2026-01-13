@@ -74,6 +74,32 @@ Automated weekly report generator based on git commit history. Creates structure
 - Filters meaningless commits (merge, wip, tmp)
 - Deduplicates and categorizes by module
 
+### markdown-helper
+Markdown document writing assistant with chart generation, format checking, and table of contents creation.
+
+**Use Cases:**
+- Generate Mermaid/UML diagrams (flowcharts, sequence diagrams, structure diagrams, swimlane diagrams)
+- Auto-convert Mermaid code to PNG images
+- Check and fix Markdown format issues
+- Generate table of contents automatically
+
+**Supported Chart Types:**
+- Flowchart (business processes, approval workflows)
+- Sequence diagram (system interactions, API calls)
+- Class diagram (data models, class structures)
+- State diagram (state transitions)
+- ER diagram (database design)
+- Mindmap (knowledge systems, functional structures)
+- Gantt chart (project planning)
+- Swimlane diagram (cross-department processes)
+
+**Core Features:**
+- Mermaid code generation with Ant Design color scheme
+- Automatic PNG conversion with transparent background
+- Format validation (header indentation, spacing, numbering)
+- Table of contents generation with anchor links
+- Image path management and naming conventions
+
 ## Installation
 
 ### Install from GitHub
@@ -91,6 +117,7 @@ Then install the skills you need:
 /plugin install browser@happy-claude-skills-gxj
 /plugin install book-cover-generator@happy-claude-skills-gxj
 /plugin install report-generator@happy-claude-skills-gxj
+/plugin install markdown-helper@happy-claude-skills-gxj
 ```
 
 ### Local Development Installation
@@ -116,6 +143,12 @@ After installation, simply describe your needs in Claude Code:
 > "Generate a book cover poster for 'The Three-Body Problem'"
 
 > "Generate a weekly report"
+
+> "Generate a user login flowchart"
+
+> "Create a system architecture sequence diagram"
+
+> "Check the markdown format and fix issues"
 
 Claude will automatically identify and invoke the appropriate skill.
 
@@ -149,6 +182,17 @@ brew install ffmpeg  # macOS
 npm install --prefix skills/browser
 ```
 
+### markdown-helper
+- Node.js 18+
+- @mermaid-js/mermaid-cli
+- Puppeteer Chrome
+
+```bash
+npm install -g @mermaid-js/mermaid-cli@10.9.0
+npm install puppeteer@19.11.1
+npx puppeteer browsers install chrome
+```
+
 ## Project Structure
 
 ```
@@ -172,13 +216,17 @@ happy-claude-skills/
 │   │   └── scripts/             # Node.js scripts
 │   ├── book-cover-generator/
 │   │   └── SKILL.md             # Skill definition
-│   └── report-generator/
+│   ├── report-generator/
+│   │   └── SKILL.md             # Skill definition
+│   └── markdown-helper/
 │       └── SKILL.md             # Skill definition
 ├── README.md
 └── LICENSE
 ```
 
 ## Acknowledgments
+
+This repository is forked from [iamzhihuix/happy-claude-skills](https://github.com/iamzhihuix/happy-claude-skills). Special thanks to the original author for creating this wonderful collection of Claude Code skills.
 
 - **video-processor** skill is adapted from [claude-code-hooks-multi-agent-observability](https://github.com/disler/claude-code-hooks-multi-agent-observability) by [@disler](https://github.com/disler)
 - **browser** skill is based on [Mario Zechner](https://mariozechner.at)'s article [What if you don't need MCP?](https://mariozechner.at/posts/2025-11-02-what-if-you-dont-need-mcp/) ([GitHub](https://github.com/badlogic/browser-tools)), adapted from [Factory.ai](https://docs.factory.ai/guides/skills/browser)
